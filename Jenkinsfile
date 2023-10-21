@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        TF_WORKSPACE = 'trial_instance' // Set your Terraform workspace name
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -56,7 +52,7 @@ pipeline {
                 input 'Do you want to destroy the infrastructure?'
                 script {
                     // Change to the directory containing your Terraform code
-                    dir('path/to/terraform/code') {
+                    dir('/Users/saikaushikmanchala/Desktop/Integration ') {
                         sh 'terraform destroy'
                     }
                 }
