@@ -44,19 +44,5 @@ pipeline {
                 }
             }
         }
-        stage('Terraform Destroy') {
-            when {
-                expression { currentBuild.resultIsBetterOrEqualTo('SUCCESS') }
-            }
-            steps {
-                input 'Do you want to destroy the infrastructure?'
-                script {
-                    // Change to the directory containing your Terraform code
-                    dir('/Users/saikaushikmanchala/Desktop/Integration ') {
-                        sh 'terraform destroy'
-                    }
-                }
-            }
-        }
-    }
+        
 }
